@@ -1,7 +1,7 @@
 #include <includes/print.hpp>
 #include <cmath>
 
-double equation(double x) {
+double function(double x) {
     return pow(x, 3) - exp(x) - 5.5;
 }
 
@@ -14,11 +14,11 @@ bool isMonotonic(double a, double b) {
 }
 
 bool hasOneRoot(double a, double b) {
-    return equation(a) * equation(b) < 0;
+    return function(a) * function(b) < 0;
 }
 
 bool checkInterval(double a, double b) {
-    if (!isMonotonic(a, b) && !hasOneRoot(a, b)) {
+    if (a == b || !isMonotonic(a, b) || !hasOneRoot(a, b)) {
         printInValidInterval();
         return false;
     }
