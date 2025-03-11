@@ -10,16 +10,18 @@ double derivative(double x) {
 }
 
 bool isMonotonic(double a, double b) {
-    double derivativeAtA = derivative(a);
-    double derivativeAtB = derivative(b);
-
-    return (derivativeAtA > 0 && derivativeAtB > 0) || (derivativeAtA < 0 && derivativeAtB < 0);
+    return (derivative(a) > 0 && derivative(b) > 0) || (derivative(a) < 0 && derivative(b) < 0);
 }
 
-void checkInterval(double a, double b) {
-    if ((equation(a) * equation(b) > 0) || !isMonotonic(a, b)) {
+bool hasOneRoot(double a, double b) {
+    return equation(a) * equation(b) < 0;
+}
+
+bool checkInterval(double a, double b) {
+    if (!isMonotonic(a, b) && !hasOneRoot(a, b)) {
         printInValidInterval();
-        return;
+        return false;
     }
     printValidInterval();
+    return true;
 }

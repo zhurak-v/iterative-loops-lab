@@ -1,3 +1,3 @@
 #pragma once
 
-void checkInterval(double a, double b);
+bool checkInterval(double a, double b);
