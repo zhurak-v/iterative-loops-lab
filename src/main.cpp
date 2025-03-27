@@ -2,7 +2,7 @@
 #include <includes/loop-interations.hpp>
 
 int main() {
-    double a, b, e;
+    double a, b, eps;
 
     std::cout << "Please type the left border (a): ";
     std::cin >> a;
@@ -11,8 +11,8 @@ int main() {
     std::cin >> b;
 
     std::cout << "Please type the Epsilon error: ";
-    std::cin >> e;
+    std::cin >> eps;
 
-    loopIterations(a, b, e);
+    loopIterations(a, b, eps);
     return 0;
 }

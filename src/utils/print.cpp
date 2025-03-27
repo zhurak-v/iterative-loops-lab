@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <includes/check.hpp>
 
 void printTitle() {
     std::cout  << "Iteration"
@@ -15,6 +16,7 @@ void printIteration(int iteration, double x) {
 
 void printResult(double x) {
     std::cout << "The root found is x = " << std::fixed << std::setprecision(5) << x << std::endl;
+    std::cout << "x^3 - e^x - 5.5 = " << f(x) << std::endl;
 }
 
 void printOutOfBounds() {

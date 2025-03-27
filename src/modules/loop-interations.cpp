@@ -4,7 +4,7 @@
 #include <includes/print.hpp>
 #include <includes/check.hpp>
 
-void loopIterations(double a, double b, double e) {
+void loopIterations(double a, double b, double eps) {
     if (!checkInterval(a, b))
         return;
 
@@ -18,7 +18,7 @@ void loopIterations(double a, double b, double e) {
         x1 = phi(x0);
         printIteration(iterations, x1);
 
-        if (fabs(x1 - x0) < e) {
+        if (fabs(x1 - x0) < eps) {
             printResult(x1);
             return;
         }
